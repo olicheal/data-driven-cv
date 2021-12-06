@@ -55,26 +55,18 @@ Aside
 
 Contact {#contact}
 --------------------------------------------------------------------------------
-- <i class="fa fa-envelope"></i> [eleanor.elizabeth.j@gmail.com](mailto:eleanor.elizabeth.j@gmail.com)
-- <i class="fa fa-github"></i> [github.com/ee-jackson](https://github.com/ee-jackson)
-- <i class="fa fa-twitter"></i> [ee_jackson](https://twitter.com/ee_jackson)
-- <i class="fa fa-link"></i> [eleanor-jackson.com](http://eleanor-jackson.com/)
-- <i class="fa fa-user"></i> [ResearchGate](https://www.researchgate.net/profile/Eleanor-Jackson-3)
+
+```{r}
+CV %>% print_contact_info()
+```
 
 Skills {#skills}
 --------------------------------------------------------------------------------
 
-**Field**\
-remote working in tropical and temperate forests
+```{r}
+CV %>% print_skills()
+```
 
-**Lab**\
-DNA extraction and purification; 16S and 18S rRNA gene sequencing with Illumina MiSeq; culturing and isolation of bacteria, algae and fungi; flow cytometry; general microbiology; excellent sterile technique
-
-**Statistics and data analysis**\
-basic statistics; linear, non-linear and mixed-effects modelling including Bayesian approaches; phylogenetic analyses; alpha and beta diversity analyses from Illumina output using QIIME; geospatial data analysis with QGIS
-
-**Programming**\
-excellent working knowledge of R, beginner in Python, UNIX and SQL
 
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
