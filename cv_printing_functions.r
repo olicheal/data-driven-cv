@@ -44,6 +44,7 @@ create_CV_object <-  function(data_location,
     cv$skills        <- read_gsheet(sheet_id = "language_skills")
     cv$text_blocks   <- read_gsheet(sheet_id = "text_blocks")
     cv$contact_info  <- read_gsheet(sheet_id = "contact_info")
+    cv$skills_research      <- read_gsheet(sheet_id = "skills")
   } else {
     # Want to go old-school with csvs?
     cv$entries_data <- readr::read_csv(paste0(data_location, "entries.csv"), skip = 1)
@@ -206,7 +207,7 @@ print_skill_bars <- function(cv, out_of = 5, bar_color = "#969696", bar_backgrou
 
 
 
-#' @description List of all links in document labeled by their superscript integer.
+#' @description List of all links in document labelled by their superscript integer.
 print_links <- function(cv) {
   n_links <- length(cv$links)
   if (n_links > 0) {
@@ -234,6 +235,26 @@ print_contact_info <- function(cv){
   glue::glue_data(
     cv$contact_info,
     "- <i class='fa fa-{icon}'></i> {contact}"
+  ) %>% print()
+
+  invisible(cv)
+}
+
+#' @description Skills section
+print_skills <- function(cv){
+  cv$skills_research %>%
+    tidyr::unite(
+      tidyr::starts_with('description'),
+      col = "description_bullets",
+      sep = "\n- • ",
+      na.rm = TRUE
+    ) %>%
+    dplyr::mutate(
+      description_bullets = ifelse(description_bullets != "", paste0("- • ", description_bullets), "") ) %>%
+    glue::glue_data(
+      "<b>{section}</b>\n
+      {description_bullets}
+      \n\n\n"
   ) %>% print()
 
   invisible(cv)
