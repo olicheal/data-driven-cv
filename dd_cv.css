@@ -24,6 +24,11 @@ sup {
   font-style: italic;
 }
 
+/* Reduce date font size so month won't break to a new line */
+.date {
+  font-size: 0.65rem;
+}
+
 /* Avoid the breaking within a section */
 .blocks {
   break-inside: avoid;
@@ -69,9 +74,13 @@ sup {
   display: none;
 }
 
-/* Move closer to start and up towards header */
+/* Move closer to start and up towards header
 .aside ul {
   padding-left: 1rem;
+}*/
+.aside ul {
+  list-style-position: outside;
+  padding-left: 0;
 }
 
 .aside li::before {
@@ -80,7 +89,7 @@ sup {
   content: "• ";
 }
 
-/* Make sure elements in asside are centered and have a nice small text */
+/* Make sure elements in aside are centered and have a nice small text */
 .aside {
   width: calc(var(--sidebar-width) + 9px);
   line-height: 1.2;
