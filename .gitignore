@@ -1,4 +1,7 @@
-.pdf
+# ignore output files
+*.pdf
+*.html
+
 ## OS ignores
 # General
 .DS_Store
