@@ -122,17 +122,14 @@ CV %<>% print_section('industry_positions')
 Publications {data-icon=book}
 --------------------------------------------------------------------------------
 
+::: aside
+```{r}
+CV %<>% print_text_block('pubs_aside')
+```
+:::
+
 ```{r}
 CV %<>% print_section('academic_articles')
-```
-
-
-
-Teaching experience {data-icon=chalkboard-teacher}
---------------------------------------------------------------------------------
-
-```{r}
-CV %<>% print_section('teaching_positions')
 ```
 
 
@@ -161,9 +158,33 @@ CV %<>% print_section('talks_posters')
 
 
 
-Professional society affiliations {data-icon=id-card-o}
+Teaching experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 ```{r}
+CV %<>% print_section('teaching_positions')
+```
+
+
+
+Professional society affiliations {data-icon=id-card-o}
+--------------------------------------------------------------------------------
+
+::: aside
+```{r}
+CV %<>% print_text_block('review_aside')
+```
+:::
+
+```{r}
 CV %<>% print_section('societies')
+```
+
+
+
+Certifications {data-icon=certificate}
+--------------------------------------------------------------------------------
+
+```{r}
+CV %<>% print_section('certifications')
 ```
