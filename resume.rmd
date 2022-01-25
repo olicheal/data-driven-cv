@@ -98,6 +98,9 @@ Main
 Eleanor Jackson {#title}
 --------------------------------------------------------------------------------
 
+```{r}
+CV %<>% print_text_block("strapline") 
+```
 
 
 Education {data-icon=graduation-cap}
