@@ -18,6 +18,7 @@ knitr::opts_chunk$set(
 )
 
 library("magrittr") # For the pipe
+library("dplyr") # For mutate and filter
 source("cv_printing_functions.r")
 
 # Read in all data and initialize a CV printer object
@@ -25,6 +26,13 @@ CV <- create_CV_object(
   data_location = "https://docs.google.com/spreadsheets/d/1zbD2ckKDOoJX7OmeNlZuqa2tnPQmH0-7o9QqjL6n9tU/edit#gid=917338460",  
   pdf_mode = params$pdf_mode
 )
+
+# Strip descriptions from education when in CV mode
+# I describe them in more detail in "research positions"
+CV$entries_data <- CV$entries_data %>% 
+  dplyr::mutate(description_bullets =
+    ifelse(section == "education", "", description_bullets)
+    )
 
 ```
 
