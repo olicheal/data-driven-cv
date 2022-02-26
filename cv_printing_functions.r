@@ -232,9 +232,10 @@ Links {data-icon=link}
 
 #' @description Contact information section with icons
 print_contact_info <- function(cv){
+  svg <- lapply(cv$contact_info$icon, fontawesome::fa)
   glue::glue_data(
     cv$contact_info,
-    "- <i class='{icon}'></i> {contact}"
+    "- {svg} {contact}"
   ) %>% print()
 
   invisible(cv)
