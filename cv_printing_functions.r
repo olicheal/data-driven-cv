@@ -34,7 +34,7 @@ create_CV_object <-  function(data_location,
       # My info is in a public sheet so there's no need to do authentication but if you want
       # to use a private sheet, then this is the way you need to do it.
       # designate project-specific cache so we can render Rmd without problems
-      options(gargle_oauth_email = "eleanor.elizabeth.j@gmail.com")
+      options(gargle_oauth_email = "oli.cheal@gmail.com")
     }
 
     read_gsheet <- function(sheet_id){
@@ -247,11 +247,11 @@ print_skills <- function(cv){
     tidyr::unite(
       tidyr::starts_with('description'),
       col = "description_bullets",
-      sep = "\n- • ",
+      sep = "<br/>",
       na.rm = TRUE
     ) %>%
     dplyr::mutate(
-      description_bullets = ifelse(description_bullets != "", paste0("- • ", description_bullets), "") ) %>%
+      description_bullets = ifelse(description_bullets != "", paste0("", description_bullets), "") ) %>%
     glue::glue_data(
       "<b>{section}</b>\n
       {description_bullets}

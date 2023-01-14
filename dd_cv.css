@@ -15,7 +15,8 @@ h2 {
 
 /* Make links green */
  a, a:hover, a:focus, a:active {
-      color: #036C34
+      /* color: #008080 */
+      color: #05828e
  }
 
 /* When in PDF export mode make sure superscripts are nice and small and italic */
@@ -99,7 +100,7 @@ sup {
 
 /* Make little circle bullet be green */
 .decorator::after {
-  background-color: #036C34;
+  background-color: #05828e;
 }
 
 /* Remove the fake bullets from lists */
